@@ -1,13 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
     <title>Document</title>
-</head>
-<body>
-    KODUNUZU BURAYA YAZABILIRSINIZ
+  </head>
+
+  <body>
+    <div id="container">
+      <form id="form1" method="post" onsubmit="return validation();">
+        <span>Hesap : </span>
+        <select id="dropdown">
+          <option>Lütfen Hesap Seçin</option>
+          <option value="1500">88 xxxx xxxx xxxx 17</option>
+          <option value="1250">36 xxxx xxxx xxxx 25</option>
+          <option value="1000">09 xxxx xxxx xxxx 65</option>
+        </select><br />
+      </form>
+      <div id="iban">
+        <span>IBAN : </span>
+        <input />
+      </div>
+      <div id="amount">
+        <span>Tutar : </span>
+        <input id="tutar" /><br />
+      </div>
+
+      <button id="myBtn" disabled>Gönder</button>
+      <div class="kronometre">
+        <a id="time">02 : 00</a>
+      </div>
+    </div>
+
+    <div id="success">
+      <span id="scc"> İşleminiz Başarılı Bir Şekilde Gerçekleşmiştir</span><br>
+      <button id="successBtn" value="SUBMİT FORM">Tamam</button>
+    </div>
+    <div id="notSuccess">
+        <span id="nots"> Telefonunuza gelen şifreyi girin</span><br>
+        <input id="pass" maxlength="4"><br>
+        <span id="nots1"></span>
+        <button id="notSuccessBtn">Gönder</button>
+    </div>
+   
+
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
