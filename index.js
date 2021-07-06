@@ -30,9 +30,9 @@ let element = document.getElementById("dropdown");
 
 element.addEventListener("change", (e) => {
   let checkedValue = e.target.value;
-  console.log(checkedValue);
+  document.getElementById("bakiye").innerHTML = "Mevcut Bakiyeniz " + checkedValue + " TL";
 });
-
+let ibanInput = document.querySelector("#IBAN");
 let tutarInput = document.querySelector("#tutar");
 tutarInput.addEventListener("change", amountChange);
 function amountChange() {
@@ -49,7 +49,8 @@ let formChange = document.getElementById("container");
 formChange.addEventListener("input", (f) => {
   let checkedValue = document.getElementById("dropdown").value;
   let valueInput = Number(tutarInput.value);
-  if (valueInput > 0 && checkedValue !== "" && valueInput < checkedValue) {
+  let ibanValue = (ibanInput.value);
+  if (valueInput > 0 && checkedValue !== "" && valueInput < checkedValue && ibanValue !== "") {
     document.getElementById("myBtn").disabled = false;
   }else{
     document.getElementById("myBtn").disabled = true;
@@ -60,7 +61,7 @@ let send = document.querySelector("#myBtn");
 send.addEventListener("click", sendSuccess);
 function sendSuccess() {
   let valueInput = Number(tutarInput.value);
-  console.log(valueInput);
+ 
 
   if (valueInput < 500) {
     document.getElementById("success").style.display = "block";
